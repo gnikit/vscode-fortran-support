@@ -3,7 +3,7 @@
   "displayName": "Modern Fortran",
   "description": "Modern Fortran language support, including syntax highlighting and error detection.",
   "version": "2.4.0",
-  "publisher": "krvajalm",
+  "publisher": "gnikit",
   "license": "MIT",
   "author": {
     "email": "krvajal.miguelangel@gmail.com",
