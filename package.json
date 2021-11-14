@@ -2,8 +2,8 @@
   "name": "linter-gfortran",
   "displayName": "Modern Fortran",
   "description": "Modern Fortran language support, including syntax highlighting and error detection.",
-  "version": "2.6.0",
-  "publisher": "krvajalm",
+  "version": "2.6.1",
+  "publisher": "gnikit",
   "license": "MIT",
   "author": {
     "email": "krvajal.miguelangel@gmail.com",
