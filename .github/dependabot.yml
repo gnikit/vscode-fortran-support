@@ -9,7 +9,7 @@ updates:
     directory: '/' # Location of package manifests
     schedule:
       interval: 'weekly'
-    assignees:
-      - 'gnikit'
-    reviewers:
-      - 'gnikit'
+#     assignees:
+#       - 'gnikit'
+#     reviewers:
+#       - 'gnikit'
