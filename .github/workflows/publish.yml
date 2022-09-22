@@ -20,14 +20,14 @@ jobs:
           vsce package --no-git-tag-version ${GITHUB_REF_NAME:1}
 
       - name: Update package.json version
-        uses: EndBug/add-and-commit@v9
-        with:
-          author_name: "gnikit"
-          author_email: giannis.nikiteas@gmail.com
-          message: "ci: update package.json version"
-          add: "package.json"
-          tag: ${{ github.ref_name }}
-          tag_push: "--force"
+        run: |
+          git describe
+          echo "---------------------------------"
+          git status
+          git add package.json
+          git commit -m "ci: update package.json version"
+          git tag -f $GITHUB_REF_NAME
+          git push origin -f $GITHUB_REF_NAME
 
       - uses: softprops/action-gh-release@master
         with:
