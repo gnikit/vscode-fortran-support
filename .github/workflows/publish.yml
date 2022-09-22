@@ -18,3 +18,8 @@ jobs:
           echo "@@@@@@@@@: $GITHUB_REF_NAME"
           npm i -g vsce
           vsce package --no-git-tag-version ${GITHUB_REF_NAME:1}
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: vsix
+          path: *.vsix
