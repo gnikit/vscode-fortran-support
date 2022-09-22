@@ -21,11 +21,14 @@ jobs:
 
       - name: Update package.json version
         run: |
-          git config user.name github-actions
-          git config user.email github-actions@github.com
+          git config user.name $GITHUB_ACTOR
+          git config user.email "$GITHUB_ACTOR"@users.noreply.github.com
           git status
+          git checkout main
           git add package.json
           git commit -m "ci: update package.json version"
+          git status
+          git show
           git tag -f $GITHUB_REF_NAME
           git push origin -f $GITHUB_REF_NAME
 
