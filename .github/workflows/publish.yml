@@ -26,6 +26,8 @@ jobs:
           author_email: giannis.nikiteas@gmail.com
           message: "ci: update package.json version"
           add: "package.json"
+          tag: ${{ github.ref_name }}
+          tag_push: "--force"
 
       - uses: softprops/action-gh-release@master
         with:
