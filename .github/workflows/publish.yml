@@ -19,6 +19,14 @@ jobs:
           npm i -g vsce
           vsce package --no-git-tag-version ${GITHUB_REF_NAME:1}
 
+      - name: Update package.json version
+        uses: EndBug/add-and-commit@v9
+        with:
+          author_name: "gnikit"
+          author_email: giannis.nikiteas@gmail.com
+          message: "ci: update package.json version"
+          add: "package.json"
+
       - uses: softprops/action-gh-release@master
         with:
           files: ./*.vsix
