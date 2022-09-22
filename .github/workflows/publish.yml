@@ -12,13 +12,9 @@ jobs:
         with:
           node-version: 16
       - run: npm ci
-      # - name: Publish to Open VSX Registry
-      #   uses: HaaLeo/publish-vscode-extension@v1
-      #   with:
-      #     pat: ${{ secrets.OPEN_VSX_TOKEN }}
-      - name: Publish to Visual Studio Marketplace
-        uses: HaaLeo/publish-vscode-extension@v1
-        with:
-          pat: ${{ secrets.VS_MARKETPLACE_TOKEN }}
-          registryUrl: https://marketplace.visualstudio.com
-          preRelease: ${{ github.event.release.prerelease }}
+
+      - name: Package Release ${{ github.ref_name }}
+        run: |
+          echo "@@@@@@@@@: $GITHUB_REF_NAME"
+          npm i -g vsce
+          vsce package --no-git-tag-version ${GITHUB_REF_NAME:1}
