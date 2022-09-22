@@ -19,7 +19,6 @@ jobs:
           npm i -g vsce
           vsce package --no-git-tag-version ${GITHUB_REF_NAME:1}
 
-      - uses: actions/upload-artifact@v3
+      - uses: softprops/action-gh-release@master
         with:
-          name: vsix
-          path: ./*.vsix
+          files: ./*.vsix
