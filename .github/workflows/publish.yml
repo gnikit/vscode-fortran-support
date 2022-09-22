@@ -21,8 +21,8 @@ jobs:
 
       - name: Update package.json version
         run: |
-          git config --global user.email "giannis.nikiteas@gmail.com"
-          git config --global user.name "gnikit"
+          git config user.name github-actions
+          git config user.email github-actions@github.com
           git status
           git add package.json
           git commit -m "ci: update package.json version"
