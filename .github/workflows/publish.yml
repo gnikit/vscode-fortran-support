@@ -21,8 +21,6 @@ jobs:
 
       - name: Update package.json version
         run: |
-          git describe
-          echo "---------------------------------"
           git status
           git add package.json
           git commit -m "ci: update package.json version"
