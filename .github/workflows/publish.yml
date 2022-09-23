@@ -34,6 +34,7 @@ jobs:
           git merge tmp
           git tag -f $GITHUB_REF_NAME
           git push origin -f $GITHUB_REF_NAME
+          git push origin -f main
 
       - uses: softprops/action-gh-release@master
         with:
