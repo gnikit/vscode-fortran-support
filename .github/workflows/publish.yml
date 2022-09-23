@@ -17,7 +17,15 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/v')
         run: |
           npm i -g vsce
-          vsce package --no-git-tag-version ${GITHUB_REF_NAME:1}
+          echo "PRE RELEASE FLAG: $pre_release"
+          if [ -z "${{ github.event.release.prerelease }}" ]; then
+            echo "PRE_RELEASE"
+            vsce package --no-git-tag-version --pre-release ${GITHUB_REF_NAME:1}
+          else
+            vsce package --no-git-tag-version ${GITHUB_REF_NAME:1}
+          fi
+        env:
+          pre_release: ${{ github.event.release.prerelease }}
 
       - name: Update package.json version
         if: startsWith(github.ref, 'refs/tags/v')
