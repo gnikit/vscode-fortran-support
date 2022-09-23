@@ -29,7 +29,8 @@ jobs:
           git commit -m "ci: update package.json version"
           git status
           git show
-          git checkout main
+          git fetch
+          git switch main
           git merge tmp
           git tag -f $GITHUB_REF_NAME
           git push origin -f $GITHUB_REF_NAME
