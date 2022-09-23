@@ -21,10 +21,8 @@ jobs:
 
       - name: Update package.json version
         run: |
-          echo "name is: $GITHUB_ACTOR"
-          echo "email is:" "$GITHUB_ACTOR"@users.noreply.github.com
-          git config user.name $GITHUB_ACTOR
-          git config user.email "$GITHUB_ACTOR"@users.noreply.github.com
+          git config user.name github-actions
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
           git status
           git switch -c tmp
           git add package.json
